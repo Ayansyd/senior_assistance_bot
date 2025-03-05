@@ -1,0 +1,17 @@
+# For STT (Vosk model)
+vosk
+sounddevice
+
+# For TTS (gTTS)
+gTTS
+playsound
+
+# For HTTP requests
+requests
+
+# For basic NLP
+nltk
+spacy
+
+# Others
+numpy
