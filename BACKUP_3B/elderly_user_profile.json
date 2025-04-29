@@ -1,0 +1,203 @@
+{
+    "user_name": "Ayan",
+    "language": "en",
+    "likes": [
+        "listening to music",
+        "i'm an electric music",
+        "i'm dancing music",
+        "ball-levered music",
+        "to go to swim",
+        "to listen bollywood music only when i am sad",
+        "not every now",
+        "then",
+        "pizza or pasta?",
+        "pizza or pasta which amongst them",
+        "pizza",
+        "pasta",
+        "pizza earlier",
+        "didn't i?",
+        "arthritis",
+        "football so we could talk about football if you wanted to",
+        "football",
+        "real madrid",
+        "watching them play. i used to love them even more when ronald do used to play",
+        "playing it",
+        "cricket",
+        "drink",
+        "watermelon juice",
+        "talking with you",
+        "came back from work",
+        "count",
+        "your hydration",
+        "it's \u2013 my material is actually arrives here. the other part",
+        "he can kinda go longer",
+        "more intervalsce",
+        "hydration",
+        "querying for previous conversation"
+    ],
+    "dislikes": [
+        "electric music",
+        "i like ball-levered music",
+        "eating",
+        "pain",
+        "arthritis",
+        "dancing",
+        "football",
+        "crackers",
+        "late",
+        "count",
+        "material",
+        "part"
+    ],
+    "activities": [
+        {
+            "name": "symptom report",
+            "sentiment": "neutral",
+            "details": "",
+            "timestamp": "2025-04-24T10:24:16.579171"
+        },
+        {
+            "name": "seeking medical advice",
+            "sentiment": "neutral",
+            "details": "",
+            "timestamp": "2025-04-24T10:53:56.194556"
+        },
+        {
+            "name": "football discussion",
+            "sentiment": "positive",
+            "details": "",
+            "timestamp": "2025-04-24T10:57:48.894242"
+        },
+        {
+            "name": "ask_for_favorite_football_team",
+            "sentiment": "neutral",
+            "details": "",
+            "timestamp": "2025-04-24T11:12:29.780756"
+        },
+        {
+            "name": "expressing sports interest",
+            "sentiment": "positive",
+            "details": "",
+            "timestamp": "2025-04-24T11:16:32.207833"
+        },
+        {
+            "name": "sentiment analysis",
+            "sentiment": "neutral",
+            "details": "asking about a personal preference",
+            "timestamp": "2025-04-24T11:19:38.336720"
+        },
+        {
+            "name": "played cricket",
+            "sentiment": "neutral",
+            "details": "from childhood",
+            "timestamp": "2025-04-24T11:20:48.785519"
+        },
+        {
+            "name": "enjoying the thrill of competition",
+            "sentiment": "positive",
+            "details": "",
+            "timestamp": "2025-04-24T11:21:22.820211"
+        },
+        {
+            "name": "chatting",
+            "sentiment": "positive",
+            "details": "talking with the user",
+            "timestamp": "2025-04-24T11:22:23.715488"
+        },
+        {
+            "name": "counted",
+            "sentiment": "neutral",
+            "details": "requesting count",
+            "timestamp": "2025-04-24T16:58:40.302670"
+        }
+    ],
+    "events": [
+        {
+            "description": "had a visitor",
+            "sentiment": "neutral",
+            "timestamp": "2025-04-23T15:53:01.558698"
+        },
+        {
+            "description": "Recalling a memory of the user's favorite football team",
+            "sentiment": "neutral",
+            "timestamp": "2025-04-24T11:14:36.427884"
+        },
+        {
+            "description": "session",
+            "sentiment": "neutral",
+            "timestamp": "2025-04-24T16:57:59.438680"
+        }
+    ],
+    "mood_history": [
+        {
+            "timestamp": "2025-04-24T16:57:15.233358",
+            "score": 0.4588,
+            "label": "positive"
+        },
+        {
+            "timestamp": "2025-04-24T16:57:58.860659",
+            "score": 0.0,
+            "label": "neutral"
+        },
+        {
+            "timestamp": "2025-04-24T16:58:39.731232",
+            "score": 0.3612,
+            "label": "positive"
+        },
+        {
+            "timestamp": "2025-04-24T16:59:25.424534",
+            "score": 0.6369,
+            "label": "positive"
+        },
+        {
+            "timestamp": "2025-04-25T15:54:35.351570",
+            "score": -0.4215,
+            "label": "negative"
+        },
+        {
+            "timestamp": "2025-04-25T15:55:16.798739",
+            "score": 0.0,
+            "label": "neutral"
+        },
+        {
+            "timestamp": "2025-04-25T15:56:00.134438",
+            "score": 0.0,
+            "label": "neutral"
+        },
+        {
+            "timestamp": "2025-04-25T15:56:44.894089",
+            "score": 0.2681,
+            "label": "positive"
+        },
+        {
+            "timestamp": "2025-04-25T16:06:33.390017",
+            "score": 0.0,
+            "label": "neutral"
+        },
+        {
+            "timestamp": "2025-04-25T16:07:08.197884",
+            "score": -0.2411,
+            "label": "negative"
+        }
+    ],
+    "llm_summary_notes": [
+        "The user appears to be indecisive about what to do.",
+        "The user is making a lighthearted comment about their food preferences.",
+        "The user is reminding them of something they previously mentioned, but no new information is added about their activities or experiences.",
+        "User is experiencing physical discomfort and seeking advice.",
+        "The user is expressing frustration or concern about their health condition.",
+        "Potential health concern",
+        "lack of knowledge about dance genres",
+        "The user inquired about their favorite football team, suggesting it might be worth recalling or checking.",
+        "user is asking about their favorite football team",
+        "enjoy playing",
+        "request for a drink due to competitive nature",
+        "order for watermelon juice",
+        "the conversation was generally positive",
+        "Unclear sentiment towards material, but positive about hydration",
+        "Reminder: Previous conversation topic"
+    ],
+    "created_at": "2025-04-23T10:56:31.032234",
+    "last_updated": "2025-04-25T16:07:53.683713",
+    "personality_notes": []
+}

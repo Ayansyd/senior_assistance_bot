@@ -15,3 +15,13 @@ spacy
 
 # Others
 numpy
+
+vaderSentiment
+
+openai-whisper 
+# Core LangChain, document loaders, ChromaDB, sentence-transformers
+plangchain langchain-community chromadb sentence-transformers
+# For loading specific file types (choose based on your knowledge base)
+pypdf # For PDFs
+unstructured # For .txt, .html, .docx, etc. (might have other system dependencies)
+python-docx

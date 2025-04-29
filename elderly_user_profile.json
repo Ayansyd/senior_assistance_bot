@@ -1,0 +1,306 @@
+{
+    "user_name": "Ayan",
+    "language": "en",
+    "likes": [
+        "listening to music",
+        "i'm an electric music",
+        "i'm dancing music",
+        "ball-levered music",
+        "to go to swim",
+        "to listen bollywood music only when i am sad",
+        "not every now",
+        "then",
+        "pizza or pasta?",
+        "pizza or pasta which amongst them",
+        "pizza",
+        "pasta",
+        "pizza earlier",
+        "didn't i?",
+        "arthritis",
+        "football so we could talk about football if you wanted to",
+        "football",
+        "real madrid",
+        "watching them play. i used to love them even more when ronald do used to play",
+        "playing it",
+        "cricket",
+        "drink",
+        "watermelon juice",
+        "talking with you",
+        "came back from work",
+        "count",
+        "your hydration",
+        "it's \u2013 my material is actually arrives here. the other part",
+        "he can kinda go longer",
+        "more intervalsce",
+        "hydration",
+        "querying for previous conversation",
+        "corongla",
+        "don'tdetlge",
+        "presidentram",
+        "r",
+        "praise the promised.",
+        "locked",
+        "game night",
+        "feedback"
+    ],
+    "dislikes": [
+        "electric music",
+        "i like ball-levered music",
+        "eating",
+        "pain",
+        "arthritis",
+        "dancing",
+        "football",
+        "crackers",
+        "late",
+        "count",
+        "material",
+        "part",
+        "kormanga",
+        "lean it up",
+        "too much.",
+        "adject",
+        "rude",
+        "etc",
+        "take your arms out of your mouth.",
+        "tp",
+        "gus",
+        "nothing",
+        "silence your existence. just",
+        "unsubscribe"
+    ],
+    "activities": [
+        {
+            "name": "symptom report",
+            "sentiment": "neutral",
+            "details": "",
+            "timestamp": "2025-04-24T10:24:16.579171"
+        },
+        {
+            "name": "seeking medical advice",
+            "sentiment": "neutral",
+            "details": "",
+            "timestamp": "2025-04-24T10:53:56.194556"
+        },
+        {
+            "name": "football discussion",
+            "sentiment": "positive",
+            "details": "",
+            "timestamp": "2025-04-24T10:57:48.894242"
+        },
+        {
+            "name": "ask_for_favorite_football_team",
+            "sentiment": "neutral",
+            "details": "",
+            "timestamp": "2025-04-24T11:12:29.780756"
+        },
+        {
+            "name": "expressing sports interest",
+            "sentiment": "positive",
+            "details": "",
+            "timestamp": "2025-04-24T11:16:32.207833"
+        },
+        {
+            "name": "sentiment analysis",
+            "sentiment": "neutral",
+            "details": "asking about a personal preference",
+            "timestamp": "2025-04-24T11:19:38.336720"
+        },
+        {
+            "name": "played cricket",
+            "sentiment": "neutral",
+            "details": "from childhood",
+            "timestamp": "2025-04-24T11:20:48.785519"
+        },
+        {
+            "name": "enjoying the thrill of competition",
+            "sentiment": "positive",
+            "details": "",
+            "timestamp": "2025-04-24T11:21:22.820211"
+        },
+        {
+            "name": "chatting",
+            "sentiment": "positive",
+            "details": "talking with the user",
+            "timestamp": "2025-04-24T11:22:23.715488"
+        },
+        {
+            "name": "counted",
+            "sentiment": "neutral",
+            "details": "requesting count",
+            "timestamp": "2025-04-24T16:58:40.302670"
+        },
+        {
+            "name": "restaurant_suggestion",
+            "sentiment": "neutral",
+            "details": "Kormangala, Bangalore",
+            "timestamp": "2025-04-28T11:02:18.152693"
+        },
+        {
+            "name": "corongla",
+            "sentiment": "positive",
+            "details": "liked",
+            "timestamp": "2025-04-28T11:03:42.038927"
+        },
+        {
+            "name": "repeated question",
+            "sentiment": "neutral",
+            "details": "",
+            "timestamp": "2025-04-28T11:05:18.098978"
+        },
+        {
+            "name": "move to a new location",
+            "sentiment": "positive",
+            "details": "ability to move",
+            "timestamp": "2025-04-28T11:06:11.979390"
+        },
+        {
+            "name": "mentioning danger",
+            "sentiment": "negative",
+            "details": "",
+            "timestamp": "2025-04-28T15:56:49.572449"
+        },
+        {
+            "name": "expression of excitement or enthusiasm (2 times)",
+            "sentiment": "positive",
+            "details": "",
+            "timestamp": "2025-04-28T15:56:49.572472"
+        },
+        {
+            "name": "joking",
+            "sentiment": "positive",
+            "details": "just kidding",
+            "timestamp": "2025-04-28T15:58:25.204607"
+        },
+        {
+            "name": "gaming",
+            "sentiment": "neutral",
+            "details": "playing a game",
+            "timestamp": "2025-04-28T16:11:15.049863"
+        }
+    ],
+    "events": [
+        {
+            "description": "had a visitor",
+            "sentiment": "neutral",
+            "timestamp": "2025-04-23T15:53:01.558698"
+        },
+        {
+            "description": "Recalling a memory of the user's favorite football team",
+            "sentiment": "neutral",
+            "timestamp": "2025-04-24T11:14:36.427884"
+        },
+        {
+            "description": "session",
+            "sentiment": "neutral",
+            "timestamp": "2025-04-24T16:57:59.438680"
+        },
+        {
+            "description": "asking for recommendations",
+            "sentiment": "neutral",
+            "timestamp": "2025-04-28T11:01:03.766584"
+        },
+        {
+            "description": "sighting another campus church and for fans to come through",
+            "sentiment": "neutral",
+            "timestamp": "2025-04-28T15:56:49.572490"
+        },
+        {
+            "description": "being in the ceiling where they step down",
+            "sentiment": "neutral",
+            "timestamp": "2025-04-28T15:56:49.572503"
+        },
+        {
+            "description": "Praise the promised.",
+            "sentiment": "positive",
+            "timestamp": "2025-04-28T16:06:59.776342"
+        },
+        {
+            "description": "Subscription reminder",
+            "sentiment": "neutral",
+            "timestamp": "2025-04-28T16:16:04.826494"
+        }
+    ],
+    "mood_history": [
+        {
+            "timestamp": "2025-04-28T16:09:37.160486",
+            "score": 0.0,
+            "label": "neutral"
+        },
+        {
+            "timestamp": "2025-04-28T16:10:24.608387",
+            "score": 0.3612,
+            "label": "positive"
+        },
+        {
+            "timestamp": "2025-04-28T16:11:14.382508",
+            "score": -0.0286,
+            "label": "neutral"
+        },
+        {
+            "timestamp": "2025-04-28T16:12:16.567259",
+            "score": 0.3898,
+            "label": "positive"
+        },
+        {
+            "timestamp": "2025-04-28T16:13:07.378288",
+            "score": 0.0,
+            "label": "neutral"
+        },
+        {
+            "timestamp": "2025-04-28T16:14:05.593652",
+            "score": 0.0,
+            "label": "neutral"
+        },
+        {
+            "timestamp": "2025-04-28T16:15:04.083557",
+            "score": 0.0,
+            "label": "neutral"
+        },
+        {
+            "timestamp": "2025-04-28T16:16:04.211048",
+            "score": 0.5523,
+            "label": "positive"
+        },
+        {
+            "timestamp": "2025-04-28T16:17:03.316063",
+            "score": 0.0,
+            "label": "neutral"
+        },
+        {
+            "timestamp": "2025-04-28T16:18:02.156471",
+            "score": 0.0,
+            "label": "neutral"
+        }
+    ],
+    "llm_summary_notes": [
+        "The user appears to be indecisive about what to do.",
+        "The user is making a lighthearted comment about their food preferences.",
+        "The user is reminding them of something they previously mentioned, but no new information is added about their activities or experiences.",
+        "User is experiencing physical discomfort and seeking advice.",
+        "The user is expressing frustration or concern about their health condition.",
+        "Potential health concern",
+        "lack of knowledge about dance genres",
+        "The user inquired about their favorite football team, suggesting it might be worth recalling or checking.",
+        "user is asking about their favorite football team",
+        "enjoy playing",
+        "request for a drink due to competitive nature",
+        "order for watermelon juice",
+        "the conversation was generally positive",
+        "Unclear sentiment towards material, but positive about hydration",
+        "Reminder: Previous conversation topic",
+        "User asked if they can get something, but didn't specify what it was.",
+        "confused",
+        "negative",
+        "unknown",
+        "no comment",
+        "no",
+        "sarcasm",
+        "looking forward to game night",
+        "positive",
+        "Negative sentiment towards the end of the video."
+    ],
+    "created_at": "2025-04-23T10:56:31.032234",
+    "last_updated": "2025-04-28T16:18:30.587681",
+    "personality_notes": []
+}
