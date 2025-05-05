@@ -4,3 +4,5 @@ Download, unzip and then place the `vosk-model-small-en-us-0.15` folder in the w
 
 
 Download Llama 3.2 model here: https://ollama.com/library/llama3.2
+
+

@@ -43,7 +43,7 @@ FER_TARGET_EMOTIONS = ["sad", "happy"]
 
 # --- Heart Rate Monitor Configuration ---
 HEARTBEAT_SERVER_HOST = '0.0.0.0' # Listen on all interfaces for the heartbeat server
-HEARTBEAT_SERVER_PORT = 5001     # Port for the heartbeat server
+HEARTBEAT_SERVER_PORT = 5002     # Port for the heartbeat server
 HR_MONITOR_POLL_INTERVAL = 30    # Check stored HR every 30 seconds
 HR_THRESHOLD_BPM = 120           # Threshold for high heart rate alert
 
@@ -114,7 +114,7 @@ def main():
         # Conversation Manager
         convo_manager = ConversationManager(max_history=CONVERSATION_HISTORY_LENGTH)
         # Interaction Logger
-        interaction_logger = InteractionLogger(log_file="assistant_interaction_log.txt")
+        interaction_logger = InteractionLogger(log_file="knowledge_base/assistant_interaction_log.txt")
 
         # Reminder Manager Callback using non-blocking tts_lock
         def safe_speak_callback_reminder(text):

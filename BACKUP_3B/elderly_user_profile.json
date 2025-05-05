@@ -33,7 +33,23 @@
         "he can kinda go longer",
         "more intervalsce",
         "hydration",
-        "querying for previous conversation"
+        "querying for previous conversation",
+        "corongla",
+        "don'tdetlge",
+        "presidentram",
+        "r",
+        "praise the promised.",
+        "locked",
+        "game night",
+        "feedback",
+        "few",
+        "spots",
+        "medicine",
+        "reminder",
+        "jokes",
+        "fold-walled",
+        "corporate",
+        "nothing exciting"
     ],
     "dislikes": [
         "electric music",
@@ -47,7 +63,26 @@
         "late",
         "count",
         "material",
-        "part"
+        "part",
+        "kormanga",
+        "lean it up",
+        "too much.",
+        "adject",
+        "rude",
+        "etc",
+        "take your arms out of your mouth.",
+        "tp",
+        "gus",
+        "nothing",
+        "silence your existence. just",
+        "unsubscribe",
+        "hello",
+        "over",
+        "medicine",
+        "jokes",
+        "teamed",
+        "work",
+        "water"
     ],
     "activities": [
         {
@@ -109,6 +144,84 @@
             "sentiment": "neutral",
             "details": "requesting count",
             "timestamp": "2025-04-24T16:58:40.302670"
+        },
+        {
+            "name": "restaurant_suggestion",
+            "sentiment": "neutral",
+            "details": "Kormangala, Bangalore",
+            "timestamp": "2025-04-28T11:02:18.152693"
+        },
+        {
+            "name": "corongla",
+            "sentiment": "positive",
+            "details": "liked",
+            "timestamp": "2025-04-28T11:03:42.038927"
+        },
+        {
+            "name": "repeated question",
+            "sentiment": "neutral",
+            "details": "",
+            "timestamp": "2025-04-28T11:05:18.098978"
+        },
+        {
+            "name": "move to a new location",
+            "sentiment": "positive",
+            "details": "ability to move",
+            "timestamp": "2025-04-28T11:06:11.979390"
+        },
+        {
+            "name": "mentioning danger",
+            "sentiment": "negative",
+            "details": "",
+            "timestamp": "2025-04-28T15:56:49.572449"
+        },
+        {
+            "name": "expression of excitement or enthusiasm (2 times)",
+            "sentiment": "positive",
+            "details": "",
+            "timestamp": "2025-04-28T15:56:49.572472"
+        },
+        {
+            "name": "joking",
+            "sentiment": "positive",
+            "details": "just kidding",
+            "timestamp": "2025-04-28T15:58:25.204607"
+        },
+        {
+            "name": "gaming",
+            "sentiment": "neutral",
+            "details": "playing a game",
+            "timestamp": "2025-04-28T16:11:15.049863"
+        },
+        {
+            "name": "asking a reminder",
+            "sentiment": "neutral",
+            "details": "",
+            "timestamp": "2025-04-30T14:13:47.525098"
+        },
+        {
+            "name": "set_reminder",
+            "sentiment": "neutral",
+            "details": "",
+            "timestamp": "2025-04-30T14:14:38.015892"
+        },
+        {
+            "name": "asked for joke",
+            "sentiment": "neutral",
+            "details": "",
+            "timestamp": "2025-04-30T14:17:06.842475"
+        },
+        {
+            "name": "reminding",
+            "sentiment": "neutral",
+            "details": "",
+            "timestamp": "2025-04-30T14:20:18.845650"
+        },
+        {
+            "name": "greeting",
+            "sentiment": "neutral",
+            "details": "",
+            "timestamp": "2025-04-30T14:23:22.813776"
         }
     ],
     "events": [
@@ -126,58 +239,88 @@
             "description": "session",
             "sentiment": "neutral",
             "timestamp": "2025-04-24T16:57:59.438680"
+        },
+        {
+            "description": "asking for recommendations",
+            "sentiment": "neutral",
+            "timestamp": "2025-04-28T11:01:03.766584"
+        },
+        {
+            "description": "sighting another campus church and for fans to come through",
+            "sentiment": "neutral",
+            "timestamp": "2025-04-28T15:56:49.572490"
+        },
+        {
+            "description": "being in the ceiling where they step down",
+            "sentiment": "neutral",
+            "timestamp": "2025-04-28T15:56:49.572503"
+        },
+        {
+            "description": "Praise the promised.",
+            "sentiment": "positive",
+            "timestamp": "2025-04-28T16:06:59.776342"
+        },
+        {
+            "description": "Subscription reminder",
+            "sentiment": "neutral",
+            "timestamp": "2025-04-28T16:16:04.826494"
+        },
+        {
+            "description": "reminder",
+            "sentiment": "neutral",
+            "timestamp": "2025-04-30T14:15:37.606418"
         }
     ],
     "mood_history": [
         {
-            "timestamp": "2025-04-24T16:57:15.233358",
-            "score": 0.4588,
+            "timestamp": "2025-04-30T14:18:31.133118",
+            "score": 0.25,
             "label": "positive"
         },
         {
-            "timestamp": "2025-04-24T16:57:58.860659",
+            "timestamp": "2025-04-30T14:18:52.991115",
+            "score": 0.5859,
+            "label": "positive"
+        },
+        {
+            "timestamp": "2025-04-30T14:19:35.525425",
             "score": 0.0,
             "label": "neutral"
         },
         {
-            "timestamp": "2025-04-24T16:58:39.731232",
-            "score": 0.3612,
+            "timestamp": "2025-04-30T14:20:18.187159",
+            "score": 0.1027,
             "label": "positive"
         },
         {
-            "timestamp": "2025-04-24T16:59:25.424534",
-            "score": 0.6369,
-            "label": "positive"
+            "timestamp": "2025-04-30T14:23:22.215550",
+            "score": 0.0,
+            "label": "neutral"
         },
         {
-            "timestamp": "2025-04-25T15:54:35.351570",
-            "score": -0.4215,
+            "timestamp": "2025-04-30T14:24:29.495624",
+            "score": 0.0,
+            "label": "neutral"
+        },
+        {
+            "timestamp": "2025-04-30T14:24:54.866052",
+            "score": 0.0,
+            "label": "neutral"
+        },
+        {
+            "timestamp": "2025-04-30T14:25:19.915005",
+            "score": -0.3875,
             "label": "negative"
         },
         {
-            "timestamp": "2025-04-25T15:55:16.798739",
-            "score": 0.0,
-            "label": "neutral"
-        },
-        {
-            "timestamp": "2025-04-25T15:56:00.134438",
-            "score": 0.0,
-            "label": "neutral"
-        },
-        {
-            "timestamp": "2025-04-25T15:56:44.894089",
-            "score": 0.2681,
+            "timestamp": "2025-04-30T14:26:03.927617",
+            "score": 0.3182,
             "label": "positive"
         },
         {
-            "timestamp": "2025-04-25T16:06:33.390017",
+            "timestamp": "2025-04-30T14:27:07.787931",
             "score": 0.0,
             "label": "neutral"
-        },
-        {
-            "timestamp": "2025-04-25T16:07:08.197884",
-            "score": -0.2411,
-            "label": "negative"
         }
     ],
     "llm_summary_notes": [
@@ -195,9 +338,26 @@
         "order for watermelon juice",
         "the conversation was generally positive",
         "Unclear sentiment towards material, but positive about hydration",
-        "Reminder: Previous conversation topic"
+        "Reminder: Previous conversation topic",
+        "User asked if they can get something, but didn't specify what it was.",
+        "confused",
+        "negative",
+        "unknown",
+        "no comment",
+        "no",
+        "sarcasm",
+        "looking forward to game night",
+        "positive",
+        "Negative sentiment towards the end of the video.",
+        "greeting",
+        "location inquiry",
+        "Reminder for medicine",
+        "taking medicine",
+        "user requested joke",
+        "remind her after 30",
+        "neutral"
     ],
     "created_at": "2025-04-23T10:56:31.032234",
-    "last_updated": "2025-04-25T16:07:53.683713",
+    "last_updated": "2025-04-30T14:27:49.701095",
     "personality_notes": []
 }

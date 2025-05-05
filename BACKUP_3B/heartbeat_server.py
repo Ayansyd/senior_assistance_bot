@@ -70,7 +70,7 @@ def get_latest_heart_rate_reading() -> dict | None:
 # Note: Flask's dev server is not recommended for production.
 # Consider 'waitress' for a more robust WSGI server.
 class ServerThread(threading.Thread):
-    def __init__(self, flask_app, host='0.0.0.0', port=5001):
+    def __init__(self, flask_app, host='0.0.0.0', port=5002):
         threading.Thread.__init__(self)
         # Use make_server for better control, especially shutdown
         self.srv = make_server(host, port, flask_app, threaded=True)
@@ -91,7 +91,7 @@ class ServerThread(threading.Thread):
 # --- Global server thread variable ---
 server_thread = None
 
-def start_server(host='0.0.0.0', port=5001):
+def start_server(host='0.0.0.0', port=5002):
     """Starts the Flask server in a background thread."""
     global server_thread
     if server_thread is None or not server_thread.is_alive():

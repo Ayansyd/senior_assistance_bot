@@ -12,7 +12,7 @@ class NLPProcessor:
         # Optional: Initialize LLM engine here if only used within NLPProcessor
         # self.llm_engine = OllamaLLM(...)
 
-    # --- Sentiment and basic preference extraction ---
+    # --- Sentiment analysis --- (Keep as is)
     def _analyze_sentiment(self, text: str) -> tuple[float, str]:
         vs = self.sentiment_analyzer.polarity_scores(text)
         score = vs['compound']
@@ -21,25 +21,46 @@ class NLPProcessor:
         else: label = "neutral"
         return score, label
 
+    # --- MODIFIED: Improved basic preference extraction ---
     def _extract_preferences(self, text_lower: str) -> dict:
         preferences = {"likes": [], "dislikes": []}
-        like_match = re.search(r"i (?:like|love|enjoy|prefer)\s+(.+)", text_lower)
-        if like_match:
-            items = re.split(r'\s+and\s+|\s*,\s*', like_match.group(1).rsplit('.', 1)[0].rsplit(' because', 1)[0].strip())
-            preferences["likes"].extend([item.strip() for item in items if item.strip()])
-        dislike_match = re.search(r"i (?:dislike|hate|don't like|do not like)\s+(.+)", text_lower)
-        if dislike_match:
-            items = re.split(r'\s+and\s+|\s*,\s*', dislike_match.group(1).rsplit('.', 1)[0].rsplit(' because', 1)[0].strip())
-            preferences["dislikes"].extend([item.strip() for item in items if item.strip()])
-        return preferences
+        min_pref_length = 3 # Minimum characters for a preference item
 
-    # --- MODIFIED: LLM-based Profile Information Extraction with Strict JSON ---
+        # Regex to capture content after like/dislike verbs, stopping at punctuation or certain conjunctions
+        # (?i) makes it case-insensitive within the group if needed later, but text_lower handles most cases
+        # Using a non-greedy match '.+?' and explicit terminators
+        like_match = re.search(r"i (?:like|love|enjoy|prefer)\s+(.+?)(?:\.|\!|\?|,| because| but| although|$)", text_lower)
+        if like_match:
+            potential_prefs = like_match.group(1).strip()
+            # Split by 'and' or ',', then clean up
+            items = re.split(r'\s+and\s+|\s*,\s*', potential_prefs)
+            for item in items:
+                cleaned_item = item.strip()
+                # Basic filter: not too short, not just digits, not a pronoun like 'it' or 'them'
+                if len(cleaned_item) >= min_pref_length and not cleaned_item.isdigit() and cleaned_item not in ['it', 'them', 'this', 'that']:
+                    preferences["likes"].append(cleaned_item)
+
+        # Similar pattern for dislikes
+        dislike_match = re.search(r"i (?:dislike|hate|don't like|do not like)\s+(.+?)(?:\.|\!|\?|,| because| but| although|$)", text_lower)
+        if dislike_match:
+            potential_prefs = dislike_match.group(1).strip()
+            items = re.split(r'\s+and\s+|\s*,\s*', potential_prefs)
+            for item in items:
+                cleaned_item = item.strip()
+                if len(cleaned_item) >= min_pref_length and not cleaned_item.isdigit() and cleaned_item not in ['it', 'them', 'this', 'that']:
+                     preferences["dislikes"].append(cleaned_item)
+
+        return preferences
+    # --- END MODIFICATION ---
+
+
+    # --- MODIFIED: LLM-based Profile Information Extraction with Stricter JSON and Preference Instructions ---
     def extract_profile_updates_with_llm(self, utterance: str, llm_engine: OllamaLLM) -> dict:
         """
         Uses the LLM to analyze an utterance and extract structured information
         suitable for updating the user profile. Returns a dictionary.
         """
-        # MODIFIED: Stricter JSON instructions
+        # MODIFIED: Stricter JSON and preference instructions
         extraction_prompt = f"""
 Analyze the following user utterance for user profile insights (activities, events, preferences, notes).
 Format the output STRICTLY as a valid JSON object using **double quotes** for all keys and string values.
@@ -47,11 +68,12 @@ Example format:
 {{
   "activities": [{{"name": "...", "sentiment": "positive/negative/neutral", "details": "..."}}],
   "events": [{{"description": "...", "sentiment": "positive/negative/neutral"}}],
-  "new_likes": ["...", "..."],
-  "new_dislikes": ["...", "..."],
-  "summary_note": "..."
+  "new_likes": ["specific item", "another preference"],
+  "new_dislikes": ["thing disliked"],
+  "summary_note": "Brief observation about the user or conversation context."
 }}
-If a category is empty, use an empty list [] or empty string "". Ensure the entire output is ONLY the JSON object, starting with {{ and ending with }}.
+**Important for Preferences:** For "new_likes" and "new_dislikes", ONLY list specific nouns or short noun phrases representing the core items mentioned. Avoid full sentences, questions, explanations, or vague terms. If no clear new preferences are stated, use empty lists [].
+Ensure the entire output is ONLY the JSON object, starting with {{ and ending with }}.
 
 User Utterance: "{utterance}"
 
@@ -89,7 +111,7 @@ JSON Analysis:
             logging.error(f"[NLP Processor] Error during LLM profile extraction call: {e}", exc_info=True)
             return {} # Return empty dict on other errors
 
-    # --- Basic Intent Parsing ---
+    # --- Basic Intent Parsing --- (Keep as is)
     def parse_user_input(self, text: str) -> dict:
         """
         Performs basic parsing: sentiment, simple preferences, intent keywords.
@@ -102,13 +124,14 @@ JSON Analysis:
         analysis_result["sentiment_score"] = sentiment_score
         analysis_result["sentiment_label"] = sentiment_label
 
+        # Use the *modified* function here
         preferences = self._extract_preferences(text_lower)
         analysis_result["likes"] = preferences["likes"]
         analysis_result["dislikes"] = preferences["dislikes"]
 
         intent = "unknown"
         entities = {}
-        # --- Intent keyword spotting ---
+        # --- Intent keyword spotting --- (Keep as is)
         if ("bring me" in text_lower) or ("fetch me" in text_lower):
              match = re.search(r"(?:bring me|fetch me)\s+(?:a|an|the)\s+(.*)", text_lower)
              if match: intent = "fetch_object"; entities["object"] = match.group(1).strip()
@@ -132,7 +155,7 @@ JSON Analysis:
         return analysis_result
 
 
-    # --- MODIFIED: Enhanced Prompt Building with Stronger RAG Instructions ---
+    # --- Build LLM Prompt --- (Keep the previous enhanced version)
     def build_llm_prompt(self,
                          intent: str,
                          analysis: dict,
@@ -140,11 +163,12 @@ JSON Analysis:
                          user_profile_summary: dict,
                          rag_context: str | None = None # Use | None type hint
                          ) -> str:
-        """
-        Build a prompt including profile, history, and potentially RAG context,
-        with stronger instructions for using RAG context for health topics.
-        """
-        # --- Profile Summary --- (Same as before)
+        # --- [Keep the existing enhanced prompt building logic here from previous steps] ---
+        # ... (Includes system_persona, RAG instructions, profile_text, history, task description) ...
+        # Make sure this part uses the previously refined version with strong RAG instructions etc.
+        # --- [ The existing logic should already be good here ] ---
+
+        # --- Profile Summary ---
         profile_text = (
             "[User Profile Summary]\n"
             f"- Name: {user_profile_summary.get('name', 'User')}\n"
@@ -166,17 +190,15 @@ JSON Analysis:
             # --- END STRONGER RAG INSTRUCTION ---
             "If the user seems bored, sad, or asks for general suggestions unrelated to health (intent 'request_suggestion'), proactively suggest an activity they might enjoy based on their profile. "
         )
-        # --- END MODIFICATION ---
 
-
-        # --- RAG Context Instructions & Insertion --- (Keep as is)
+        # --- RAG Context Instructions & Insertion ---
         rag_instructions = ""
         rag_content_block = ""
         if rag_context and not rag_context.startswith("[Error"):
             rag_instructions = (
                 "**You have been provided with potentially relevant information below from a knowledge base.** "
                 "Use this information according to the IMPORTANT health-related instruction above. "
-                "If the query is not health-related but the information seems relevant, use it *briefly* to enhance your answer. " # Added briefly
+                "If the query is not health-related but the information seems relevant, use it *briefly* to enhance your answer. "
                 "Do not mention the retrieval process itself. "
                 "If the retrieved information is clearly not relevant, ignore it.\n\n"
             )
@@ -198,33 +220,34 @@ JSON Analysis:
         prompt += conversation_history if conversation_history else "(No previous conversation turns)\n"
         prompt += "[End Conversation History]\n\n"
 
-        # --- Current Task --- (Refine task descriptions for brevity)
+        # --- Current Task ---
         prompt += "[Current Task]\n"
         entities = analysis.get("entities", {})
         raw_text = analysis.get("raw_text", "")
         sentiment_label = analysis.get("sentiment_label", "unknown")
 
+        # (Keep the intent-specific task descriptions from the previous version)
         if intent == "question":
             query = entities.get("query", raw_text)
             prompt += (f"User asked: '{query}'. "
-                       "**Provide a concise answer.** Prioritize the [Retrieved Information] if relevant (especially for health topics). Otherwise, use profile/history or general knowledge briefly.") # Added concise instruction
+                       "**Provide a concise answer.** Prioritize the [Retrieved Information] if relevant (especially for health topics). Otherwise, use profile/history or general knowledge briefly.")
         elif intent == "request_suggestion":
              prompt += (f"User asked: '{raw_text}'. They want a suggestion. "
-                        "**Check [Retrieved Information] first for relevant health advice/prescriptions and state it concisely if found.** " # Prioritize concise RAG health info
-                        "Then, *briefly* suggest ONE relevant activity based on their profile (positive activities/notes) suitable for their mood. Ask if they'd like to try it.") # Limit to ONE suggestion
+                        "**Check [Retrieved Information] first for relevant health advice/prescriptions and state it concisely if found.** "
+                        "Then, *briefly* suggest ONE relevant activity based on their profile (positive activities/notes) suitable for their mood. Ask if they'd like to try it.")
         elif intent == "fetch_object":
-             obj = entities.get("object", "something"); prompt += f"User requested fetching '{obj}'. Provide a *very short* confirmation." # Explicitly short
+             obj = entities.get("object", "something"); prompt += f"User requested fetching '{obj}'. Provide a *very short* confirmation."
         elif intent == "set_reminder":
-             reminder_text = entities.get("reminder_text", ""); prompt += f"User wants to set a reminder: '{reminder_text}'. Provide a *short* acknowledgement." # Explicitly short
+             reminder_text = entities.get("reminder_text", ""); prompt += f"User wants to set a reminder: '{reminder_text}'. Provide a *short* acknowledgement."
         elif intent == "ack_reminder":
-             prompt += "User acknowledged a reminder. Give a *brief*, positive acknowledgement." # Explicitly brief
+             prompt += "User acknowledged a reminder. Give a *brief*, positive acknowledgement."
         elif intent == "get_weather":
-             prompt += "User asked for the weather. Give a *brief*, simple simulated weather update." # Explicitly brief
+             prompt += "User asked for the weather. Give a *brief*, simple simulated weather update."
         elif intent == "tell_joke":
-             prompt += "User wants a joke. Tell a *short* joke or witty line." # Explicitly short
+             prompt += "User wants a joke. Tell a *short* joke or witty line."
         else: # Unknown intent or general chat
             prompt += (f"User said: '{raw_text}' (Mood: {sentiment_label}). "
-                       "Provide a polite, helpful, and **concise** response based on profile/history. Use [Retrieved Information] briefly if relevant.") # Added concise
+                       "Provide a polite, helpful, and **concise** response based on profile/history. Use [Retrieved Information] briefly if relevant.")
 
         prompt += "\n[End Current Task]\n\n"
         prompt += "Assistant:"
