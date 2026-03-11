@@ -6,7 +6,7 @@ import whisper
 import time
 
 class WhisperSTT:
-    def __init__(self, model_name: str = "base.en", sample_rate: int = 16000, device: str = None):
+    def __init__(self, model_name: str = "base.en", sample_rate: int = 48000 , device: str = None):
         """
         Uses OpenAI's Whisper model for Speech-to-Text.
 
