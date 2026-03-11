@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyc
+.env
+venv/
+env/
+
+# Generated audio/media
+*.mp3
+*.wav
+
+# Vector DB (regenerated at runtime)
+vector_db/
+
+# ChromaDB
+chroma.sqlite3
+
+# Backup folders
+BACKUP_*/
+
+# Lock files (LibreOffice temp)
+.~lock.*
+
+# IDE
+.vscode/
+.idea/
+
+# Logs (generated at runtime)
+knowledge_base/assistant_interaction_log.txt
+
+# Model files
+*.bin
+*.pth
+*.gguf
+vosk-model*/
